@@ -22,7 +22,7 @@ Because of the nature of DTs, the importance of any chosen feature is inherently
 # Iterative RF (iRF)
 It is an algorithmic advancement of RF, which produces a more accurate model by iteratively creating weighted forests. First, an RF is created where features are unweighted and have an equal chance of being randomly sampled at any given node. The resulting importance scores for the features are then used for weighting the features in the next forest, thus increasing the chance that important features are evaluated at any given node. This process is repeated *i* times.
 
-![Figure 1](Figure 1.jpeg)
+![Figure 1](https://github.com/thisisamirv/PEN/blob/main/Figure%201.jpeg)
 
 **Note:** Due to the ability to easily follow the decisions that these models make, they have been named explainable AI (X-AI).
 
@@ -42,7 +42,7 @@ iRF Leave One out Prediction (iRF-LOOP) is a method for the creation of PENs on 
 5. To keep importance scores on the same scale across the importance matrix, each column is normalized relative to the sum of the column.
 6. Finally, from the importance matrix we will generate a network. Generally, the scores (weights) are thresholded at some value and only edges with large enough weights are included in the final network. For example, we may produce four thresholded networks, keeping the top 10%, 5%, 1%, and 0.1% of edge scores, respectively.
 
-![Figure 2](Figure 2.jpeg)
+![Figure 2](https://github.com/thisisamirv/PEN/blob/main/Figure%202.jpeg)
 
 **Note:** A common setting for the number of trees is the square root of the number of genes.
 

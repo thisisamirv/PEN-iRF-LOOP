@@ -1,9 +1,9 @@
 # The following file contains RNA-seq data for 22 samples of different human tissues and 52580 genes:
 # Import data
 library(Biobase)
-load("Data/wang_eset.RData")
-exprs_data <- exprs(wang.eset)
-rm(wang.eset)
+load("Example.RData")
+exprs_data <- exprs(Example)
+rm(Example)
 
 # Sample names include: SRX003935, SRX003921, ...
 # Gene names include: ENSG00000000003, ENSG00000000005, ...
