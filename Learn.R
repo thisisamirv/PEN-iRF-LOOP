@@ -3,7 +3,7 @@
 # The aim of this file is for educational purposes.
 ###############################################################################
 
-# The following file contains RNA-seq data for 22 samples of different human tissues and 52580 genes.
+# The following file contains RNA-seq data for 22 samples of different human tissues and 13145 genes.
 library(Biobase)
 load("Example.RData")
 exprs_data <- exprs(Example)
@@ -16,8 +16,8 @@ dim(exprs_data)
 exprs_data[1:5, 1:3]
 
 # m = 22
-# n = 52580
-# Now, we will create an iRF with the expression values for the first gene (ENSG00000000003) as Y and the expression values for the rest of the 52579 genes as predictor matrix X of size 22 * 52579:
+# n = 13145
+# Now, we will create an iRF with the expression values for the first gene (ENSG00000000003) as Y and the expression values for the rest of the 13144 genes as predictor matrix X of size 22 * 13144:
 Y = matrix(exprs_data[1, ],
   ncol = 1,
   dimnames = list(colnames(exprs_data), rownames(exprs_data)[1]))

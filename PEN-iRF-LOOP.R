@@ -121,7 +121,7 @@ main <- function() {
     imp_score[i, ] <- 0
     imp_score <- (imp_score - min(imp_score)) / (max(imp_score) - min(imp_score))
     imp_matrix <- cbind(imp_matrix, imp_score)
-    if (i %% round((dim(exprs_data)[1] / 10), digits = 0) == 0) {
+    if (i %% round((dim(exprs_data)[1] / 100), digits = 0) == 0) {
       print(paste(i, "of", dim(exprs_data)[1], "features done!"))
     }
   }
@@ -130,10 +130,10 @@ main <- function() {
   for (i in 1:dim(exprs_data)[1]) {
     imp_matrix[, i] <- sort(imp_matrix[, i], decreasing = T)
     thresh <- imp_matrix[round(length(imp_matrix[, i]) / k, digits = 0), i]
-    imp_matrix[which(imp_matrix[, i] <= thresh), i] <- NA
+    imp_matrix[which(imp_matrix[, i] <= thresh), i] <- 0
   }
   
-  return(imp_matrix)
+  return(Matrix(imp_matrix, sparse = T))
 }
 
 ########################################################################
@@ -141,6 +141,6 @@ main <- function() {
 ########################################################################
 
 main()
-save(imp_matrix, "PEN.RData")
+save(imp_matrix, file = "PEN.RData")
 print("PEN Created")
 quit(save = 'no', status = 0)
