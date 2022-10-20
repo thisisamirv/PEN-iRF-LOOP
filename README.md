@@ -46,6 +46,11 @@ iRF Leave One out Prediction (iRF-LOOP) is a method for the creation of PENs on 
 
 **Note:** A common setting for the number of trees is the square root of the number of genes.
 
+# Test
+Run the following code in shell to test the PEN-iRF-LOOP:
+
+  ./test.sh
+
 # References
 1- Cliff, A., Romero, J., Kainer, D., Walker, A., Furches, A., & Jacobson, D. (2019). A high-performance computing implementation of iterative random forest for the creation of predictive expression networks. Genes, 10(12), 996.
 2- Walker, A. M., Cliff, A., Romero, J., Shah, M. B., Jones, P., Gazolla, J. G. F. M., ... & Kainer, D. (2022). Evaluating the performance of random forest and iterative random forest based methods when applied to gene expression data. Computational and Structural Biotechnology Journal, 20, 3372-3386.
